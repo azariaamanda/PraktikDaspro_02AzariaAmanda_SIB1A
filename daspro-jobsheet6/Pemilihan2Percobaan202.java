@@ -7,9 +7,9 @@ public class Pemilihan2Percobaan202 {
     public static void main(String[] args) {
         Scanner input02 = new Scanner(System.in);
 
-        String menu, member;
+        String menu, member, qris;
         int pilihan_menu, jumlah_beli;
-        double total_bayar, harga, diskon;
+        double total_bayar, harga, diskon, potonganQris;
 
         System.out.println("-------------------------");
         System.out.println("===== MENU KAFE JTI =====");
@@ -23,6 +23,8 @@ public class Pemilihan2Percobaan202 {
         input02.nextLine();
         System.out.print("Apakah punya member (y/n)? = ");
         member = input02.nextLine();
+        System.out.print("Apakah melakukan pembayaran melalui QRIS (y/n)? = ");
+        qris = input02.nextLine();
         System.out.println("-------------------------------------");
 
         if (member.equalsIgnoreCase("y")) { // Mengguanakan equalsIgnoreCase untuk membandingkan string
@@ -43,10 +45,19 @@ public class Pemilihan2Percobaan202 {
             } else {
                 System.out.println("Masukkan pilihan menu dengan benar");
                 return; // Menghentikan eksekusi lebih lanjut jika pilihan salah
+
+            } //Menghitung total bayar setelah diskon dan potongan QRIS
+            if (qris.equalsIgnoreCase("y")) {
+                potonganQris = 1000;
+                System.out.println("besar potongan QRIS = 1000");
+                total_bayar = harga - (harga * diskon) - potonganQris; 
+                System.out.println("total bayar potongan QRIS dan diskon = " + total_bayar);
+            } else {
+                // Menghitung total bayar setelah diskon
+                total_bayar = harga - (harga * diskon); // Menghitung total bayar setelah diskon
+                System.out.println("Total bayar setelah diskon = " + total_bayar);
             }
-            // Menghitung total bayar setelah diskon
-            total_bayar = harga - (harga * diskon);
-            System.out.println("Total bayar setelah diskon = " + total_bayar);
+
         }
         else if (member.equalsIgnoreCase("n")) { // Mengguanakan equalsIgnoreCase untuk membandingkan string
             if (pilihan_menu == 1) {
@@ -64,9 +75,17 @@ public class Pemilihan2Percobaan202 {
             } else {
                 System.out.println("Masukkan pilihan menu dengan benar");
                 return;
+
+            }//Menghitung total bayar setelah diskon dan potongan QRIS
+            if (qris.equalsIgnoreCase("y")) {
+                potonganQris = 1000;
+                System.out.println("besar potongan QRIS = 1000");
+                total_bayar = harga - potonganQris; 
+                System.out.println("total bayar potongan QRIS = " + total_bayar);
+            } else {
+                // Menghitung total bayar
+                System.out.println("Total bayar = " + harga);
             }
-            // Menghitung total bayar
-            System.out.println("Total bayar = " + harga);
 
         } else {
             System.out.println("Member tidak valid");
