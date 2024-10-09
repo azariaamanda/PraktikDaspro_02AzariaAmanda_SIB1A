@@ -36,7 +36,7 @@ public class Pemilihan2Percobaan202 {
 
             } else if (pilihan_menu == 2 ) {
                 harga = 3000;
-                System.out.println("Harga Ice Tea = " + harga);
+                System.out.println("Harga ice Tea = " + harga);
 
             } else if (pilihan_menu == 3 ) {
                 harga = 15000;
@@ -59,7 +59,7 @@ public class Pemilihan2Percobaan202 {
             }
 
         }
-        else if (member.equalsIgnoreCase("n")) { // Mengguanakan equalsIgnoreCase untuk membandingkan string
+        else if (member.equals("n")) { // Mengguanakan equalsIgnoreCase untuk membandingkan string
             if (pilihan_menu == 1) {
                 harga = 14000;
                 System.out.println("Harga Ricebowl = " + harga);
@@ -77,7 +77,7 @@ public class Pemilihan2Percobaan202 {
                 return;
 
             }//Menghitung total bayar setelah diskon dan potongan QRIS
-            if (qris.equalsIgnoreCase("y")) {
+            if (qris.equals("y")) {
                 potonganQris = 1000;
                 System.out.println("besar potongan QRIS = 1000");
                 total_bayar = harga - potonganQris; 
